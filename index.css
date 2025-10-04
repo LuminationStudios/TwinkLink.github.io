@@ -1,7 +1,7 @@
 /* === Navbar === */
 .navbar {
   display: flex;
-  justify-content: center;
+  justify-content: space-between; /* space between left and centered sections */
   align-items: center;
   padding: 15px 30px;
   background: rgba(255, 255, 255, 0.25);
@@ -13,12 +13,26 @@
               0 0 20px rgba(255, 182, 193, 0.3);
 }
 
+/* Left-aligned brand/name */
 .nav-left a {
   text-decoration: none;
   font-weight: bold;
   font-size: 1.3rem;
   color: #333;
 }
+
+/* Center section (optional future dropdowns, navigation, etc.) */
+.nav-center {
+  flex: 1;
+  text-align: center;
+}
+
+/* Optional: Add hover sparkle effect for fun pastel theme */
+.nav-left a:hover {
+  text-shadow: 0 0 8px rgba(255, 182, 193, 0.7),
+               0 0 12px rgba(173, 216, 230, 0.6);
+}
+
 
 /* === Header Box === */
 .header-box {
