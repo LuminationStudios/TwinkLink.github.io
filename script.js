@@ -42,14 +42,14 @@ fetch("./websites.json")
           </div>
           <h3>${project.title}</h3>
           <p>${project.description}</p>
-          <a href="project.html?id=${project.id}" class="btn">View Project</a>
+          <a href="project.html?id=${project.id}" class="view-btn">View Project</a>
         `;
         container.appendChild(card);
       });
     }
   });
 
-// Load Websites Projects
+// Load Roblox Projects
 fetch("./roblox.json")
   .then(response => response.json())
   .then(data => {
@@ -64,7 +64,7 @@ fetch("./roblox.json")
           </div>
           <h3>${project.title}</h3>
           <p>${project.description}</p>
-          <a href="project.html?id=${project.id}" class="btn">View Project</a>
+          <a href="project.html?id=${project.id}" class="view-btn">View Project</a>
         `;
         container.appendChild(card);
       });
