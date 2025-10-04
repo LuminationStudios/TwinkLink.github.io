@@ -20,6 +20,20 @@ fetch("./websites.json")
     }
   });
 
+fetch("./header.json")
+  .then(response => response.json())
+  .then(data => {
+    const header = document.querySelector("#site-header");
+    if (header) {
+      header.innerHTML = `
+        <div class="sparkle-overlay"></div>
+        <h1>${data.title}</h1>
+        <p>${data.subtitle}</p>
+      `;
+    }
+  })
+  .catch(error => console.error("Error loading header:", error));
+
 // Load Footer
 fetch("./footer.json")
   .then(response => response.json())
