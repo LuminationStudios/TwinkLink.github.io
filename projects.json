@@ -1,23 +1,10 @@
 [
   {
-    "title": "Project Title 1",
-    "description": "A short description of this project.",
-    "details": "This is the full description for Project 1. You can explain features, tools used, and challenges you solved.",
+    "title": "Lumination Site",
+    "description": "A landing site for my Discord Bot.",
+    "details": "This is a website I designed for the Discord Bot I was working on, it features a landing page, docs page, as well as an outline for features and stats!",
     "image": "https://via.placeholder.com/600x400",
     "link": "#"
   },
-  {
-    "title": "Project Title 2",
-    "description": "This project demonstrates my skills in design and development.",
-    "details": "Full details about Project 2. Add screenshots, features, or even embed a demo.",
-    "image": "https://via.placeholder.com/600x400",
-    "link": "#"
-  },
-  {
-    "title": "Project Title 3",
-    "description": "Another portfolio piece to showcase.",
-    "details": "More details about Project 3. You can expand this section however you like.",
-    "image": "https://via.placeholder.com/600x400",
-    "link": "#"
-  }
+  
 ]
