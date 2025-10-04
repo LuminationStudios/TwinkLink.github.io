@@ -35,6 +35,79 @@ body {
   gap: 40px;
 }
 
+/* === Header Box === */
+.header-box {
+  position: relative;
+  max-width: 900px;
+  margin: 40px auto 20px auto;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(15px);
+  border-radius: 25px;
+  box-shadow: inset 0 0 8px rgba(255, 255, 255, 0.4),
+              0 8px 32px rgba(173, 216, 230, 0.4),
+              0 0 25px rgba(255, 182, 193, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  text-align: center;
+  padding: 30px 20px;
+  color: #333;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.header-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(255, 182, 193, 0.5),
+              0 0 30px rgba(173, 216, 230, 0.5);
+}
+
+.header-box h1 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.header-box p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+/* === Sparkle Overlay === */
+.sparkle-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.sparkle-overlay::before,
+.sparkle-overlay::after {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, transparent 70%),
+              radial-gradient(circle, rgba(255,182,193,0.6) 0%, transparent 70%),
+              radial-gradient(circle, rgba(173,216,230,0.6) 0%, transparent 70%);
+  background-size: 200px 200px;
+  animation: sparkle-drift 15s linear infinite;
+  opacity: 0.4;
+}
+
+.sparkle-overlay::after {
+  animation-delay: -7s;
+  opacity: 0.5;
+}
+
+@keyframes sparkle-drift {
+  0% { transform: translate(-50px, -50px) rotate(0deg); }
+  50% { transform: translate(50px, 50px) rotate(180deg); }
+  100% { transform: translate(-50px, -50px) rotate(360deg); }
+}
+
+
 /* === Project Cards with Glassmorphism === */
 .project-card {
   position: relative;
