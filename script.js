@@ -1,4 +1,6 @@
+// ===============================
 // Load Websites Projects
+// ===============================
 fetch("./websites.json")
   .then(response => response.json())
   .then(data => {
@@ -8,30 +10,25 @@ fetch("./websites.json")
         const card = document.createElement("div");
         card.classList.add("project-card");
         card.innerHTML = `
-          <img src="${project.image}" alt="${project.title}" style="width:100%; border-radius:12px;">
+          <img src="${project.image}" alt="${project.title}">
           <h3>${project.title}</h3>
           <p>${project.description}</p>
-          <a href="${project.link}" target="_blank">View Project</a>
+          <a href="${project.link}" target="_blank" class="btn">View Project</a>
         `;
         container.appendChild(card);
       });
     }
   });
 
+// ===============================
 // Load Footer
+// ===============================
 fetch("./footer.json")
   .then(response => response.json())
   .then(data => {
     const footer = document.querySelector(".site-footer");
     if (footer) {
       let html = `<p>${data.text}</p>`;
-      if (data.links) {
-        html += `<div>`;
-        data.links.forEach(link => {
-          html += `<a href="${link.url}" target="_blank">${link.name}</a> `;
-        });
-        html += `</div>`;
-      }
-      footer.innerHTML = html;
+      footer.innerHTML = html; // now only uses text (since you want just text)
     }
   });
