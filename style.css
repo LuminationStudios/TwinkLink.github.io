@@ -1,0 +1,92 @@
+/* Basic starter CSS */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to bottom, #ffe6f2, #e6f2ff);
+  margin: 0;
+  padding: 0;
+  color: #333;
+  text-align: center;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.6);
+  padding: 15px 30px;
+  border-radius: 0 0 20px 20px;
+}
+
+.nav-left {
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+.nav-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.dropbtn {
+  background: linear-gradient(90deg, #ffb6c1, #add8e6);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  border-radius: 20px;
+  min-width: 160px;
+  padding: 10px;
+  z-index: 1000;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px;
+  color: #333;
+  text-decoration: none;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 40px 20px;
+}
+
+.project-card {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 0 15px rgba(255,182,193,0.4), 0 0 20px rgba(173,216,230,0.4);
+}
+
+.site-footer {
+  text-align: center;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 20px;
+  background: linear-gradient(90deg, #ffb6c1, #add8e6);
+}

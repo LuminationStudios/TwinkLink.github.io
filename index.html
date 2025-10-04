@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Pastel Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-left">🌸 My Portfolio</div>
+    <div class="nav-center">
+      <div class="dropdown">
+        <button class="dropbtn">Projects ▾</button>
+        <div class="dropdown-content">
+          <a href="#websites">Websites</a>
+          <a href="#roblox">Roblox Projects</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">More ▾</button>
+        <div class="dropdown-content">
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Sections -->
+  <section id="websites" class="category-section active">
+    <h2>Websites</h2>
+    <div class="portfolio-grid" id="websites-grid"></div>
+  </section>
+
+  <section id="roblox" class="category-section">
+    <h2>Roblox Projects</h2>
+    <div class="portfolio-grid" id="roblox-grid"></div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact-section glow-box">
+    <h2>Contact Me</h2>
+    <p>Email: <a href="mailto:you@example.com">you@example.com</a></p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer"></footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
