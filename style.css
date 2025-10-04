@@ -148,17 +148,18 @@ body {
 .site-footer {
   text-align: center;
   margin: 20px auto;
-  background: linear-gradient(90deg, #ffb6c1, #add8e6);
+  background: #ffb6c1; /* solid pastel pink */
   border-radius: 20px;
-  box-shadow: 0 0 20px rgba(255, 182, 193, 0.5),
-              0 0 30px rgba(173, 216, 230, 0.5);
+  box-shadow: 0 0 20px rgba(255, 182, 193, 0.6),
+              0 0 30px rgba(255, 182, 193, 0.4);
   padding: 20px;
   width: fit-content;
-  font-family: 'Fredoka One', cursive; /* Fun & readable font */
+  font-family: 'Fredoka One', cursive;
   font-size: 1.3rem;
   color: #fff;
   letter-spacing: 1px;
 }
+
 
 /* === Glow + Sparkles === */
 .glow-box {
