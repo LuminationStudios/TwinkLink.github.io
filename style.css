@@ -1,0 +1,13 @@
+/* pastel css omitted for brevity (same as before) */
+
+/* Button group styling */
+.btn-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.btn-group .btn {
+  flex: 1;
+  text-align: center;
+}
