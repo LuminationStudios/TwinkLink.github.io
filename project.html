@@ -6,8 +6,27 @@
   <title>Project Details</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+  <!-- Navbar -->
+<nav class="navbar">
+  <div class="nav-left">
+    <a href="index.html" class="nav-home">🌸 My Portfolio</a>
+  </div>
+</nav>
 
   <style>
+    .nav-left .nav-home {
+  text-decoration: none;
+  color: inherit;        /* keeps your navbar text color */
+  font-weight: bold;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+.nav-left .nav-home:hover {
+  color: #ffb6c1;        /* pastel pink highlight */
+  text-shadow: 0 0 8px rgba(255, 182, 193, 0.6),
+               0 0 12px rgba(173, 216, 230, 0.6);
+}
+
     .project-detail-container {
       max-width: 900px;
       margin: 80px auto;
