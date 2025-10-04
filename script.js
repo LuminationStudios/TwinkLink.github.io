@@ -40,9 +40,7 @@ fetch("./websites.json")
           <div class="project-image-box">
             <img src="${project.image}" alt="${project.title}">
           </div>
-          <h3>${project.title}</h3>
-          <p>${project.description}</p>
-          <a href="project.html?id=${project.id}" class="view-btn">View Project</a>
+        <a href="project.html?id=${project.id}" class="view-btn">View Project</a>
         `;
         container.appendChild(card);
       });
@@ -62,9 +60,7 @@ fetch("./roblox.json")
           <div class="project-image-box">
             <img src="${project.image}" alt="${project.title}">
           </div>
-          <h3>${project.title}</h3>
-          <p>${project.description}</p>
-          <a href="project.html?id=${project.id}" class="view-btn">View Project</a>
+        <a href="project.html?id=${project.id}" class="view-btn">View Project</a>
         `;
         container.appendChild(card);
       });
