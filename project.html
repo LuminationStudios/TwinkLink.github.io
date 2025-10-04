@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Details</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .project-detail-container {
+      max-width: 900px;
+      margin: 80px auto;
+      background: rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(15px);
+      border-radius: 25px;
+      box-shadow: inset 0 0 8px rgba(255, 255, 255, 0.4),
+                  0 8px 32px rgba(173, 216, 230, 0.4),
+                  0 0 25px rgba(255, 182, 193, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 40px;
+      text-align: center;
+    }
+
+    .project-detail-container img {
+      width: 100%;
+      max-width: 700px;
+      height: auto;
+      border-radius: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 25px rgba(255,182,193,0.4), 0 0 30px rgba(173,216,230,0.4);
+    }
+
+    .project-buttons {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .project-buttons .btn {
+      display: inline-block;
+      padding: 10px 25px;
+      border-radius: 15px;
+      background: linear-gradient(90deg, #ffb6c1, #add8e6);
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 0 15px rgba(255,182,193,0.5), 0 0 20px rgba(173,216,230,0.5);
+      transition: transform 0.2s, box-shadow 0.3s;
+    }
+
+    .project-buttons .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(255,182,193,0.7), 0 0 25px rgba(173,216,230,0.7);
+    }
+  </style>
+</head>
+<body>
+  <div class="project-detail-container glow-box">
+    <h1 id="project-title">Loading...</h1>
+    <div class="project-image-box">
+      <img id="project-image" alt="Project image">
+    </div>
+    <p id="project-details"></p>
+    <div class="project-buttons">
+      <a id="visit-btn" href="#" target="_blank" class="btn">Visit Project</a>
+      <a href="index.html" class="btn">← Back to Portfolio</a>
+    </div>
+  </div>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const projectId = urlParams.get("id");
+
+    Promise.all([
+      fetch("websites.json").then(res => res.json()),
+      fetch("roblox.json").then(res => res.json())
+    ]).then(([websites, roblox]) => {
+      const allProjects = [...websites, ...roblox];
+      const project = allProjects.find(p => p.id === projectId);
+
+      if (project) {
+        document.getElementById("project-title").textContent = project.title;
+        document.getElementById("project-details").textContent = project.details;
+        document.getElementById("project-image").src = project.image;
+        document.getElementById("visit-btn").href = project.link;
+      } else {
+        document.getElementById("project-title").textContent = "Project not found.";
+      }
+    });
+  </script>
+</body>
+</html>
