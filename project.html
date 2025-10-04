@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Project Details</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-brand"><a href="index.html">🌸 Portfolio</a></div>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">☰</button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropbtn">Projects ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="index.html#websites">Websites</a></li>
+          <li><a href="index.html#roblox">Roblox Projects</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#" class="dropbtn">More ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1 id="project-title">Loading...</h1>
+    <p id="project-desc"></p>
+  </header>
+
+  <section class="project-details-card" id="details-card">
+    <div class="project-image-box">
+      <img id="project-img" src="" alt="Project image">
+    </div>
+
+    <div class="project-text">
+      <p id="project-full"></p>
+    </div>
+
+    <div class="project-button-box">
+      <a id="project-link" href="#" class="btn">Visit Project</a>
+      <a href="index.html" class="btn">⬅ Back to Portfolio</a>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <!-- footer.json will populate this -->
+  </footer>
+</body>
+</html>
