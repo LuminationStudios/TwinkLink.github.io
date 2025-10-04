@@ -255,3 +255,63 @@ body {
     transform: translateX(-50%) translateY(-10%);
   }
 }
+
+/* === Category Toggle Box === */
+.category-toggle-box {
+  max-width: 600px;
+  margin: 30px auto;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(15px);
+  border-radius: 25px;
+  box-shadow: inset 0 0 8px rgba(255, 255, 255, 0.4),
+              0 8px 32px rgba(173, 216, 230, 0.4),
+              0 0 25px rgba(255, 182, 193, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category-toggle-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(255, 182, 193, 0.5),
+              0 0 30px rgba(173, 216, 230, 0.5);
+}
+
+.category-btn {
+  background: linear-gradient(90deg, #ffb6c1, #add8e6);
+  background-size: 200% 200%; /* needed for animation */
+  color: white;
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+  border: none;
+  border-radius: 15px;
+  padding: 10px 25px;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(255,182,193,0.4),
+              0 0 20px rgba(173,216,230,0.4);
+  transition: transform 0.2s, box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.category-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255,182,193,0.6),
+              0 0 25px rgba(173,216,230,0.6);
+  animation: shimmer-move 3s linear infinite; /* start shimmer */
+}
+
+.category-btn.active {
+  background: #ffb6c1; /* solid pastel pink when active */
+  box-shadow: 0 0 20px rgba(255,182,193,0.6),
+              0 0 25px rgba(173,216,230,0.6);
+}
+
+@keyframes shimmer-move {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
