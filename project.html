@@ -28,8 +28,10 @@
 }
 
 .project-detail-container {
-  display: inline-block;      /* shrink-wraps to content */
-  margin: 80px auto;
+  display: inline-block;
+  max-width: 90%;
+  max-height: 90vh;          /* never taller than the screen */
+  margin: 40px auto;
   background: rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(15px);
   border-radius: 25px;
@@ -37,8 +39,9 @@
               0 8px 32px rgba(173, 216, 230, 0.4),
               0 0 25px rgba(255, 182, 193, 0.3);
   border: 1px solid rgba(255, 255, 255, 0.3);
-  padding: 30px;
+  padding: 20px;
   text-align: center;
+  overflow: auto;           /* allows scroll inside if absolutely needed */
 }
 
 .project-detail-container h1 {
@@ -46,11 +49,13 @@
 }
 
 .project-detail-container img {
-  width: auto;         /* natural width */
-  max-width: 100%;     /* don’t overflow parent */
-  height: auto;        /* keep aspect ratio */
+  max-width: 100%;
+  max-height: 50vh;         /* image won’t exceed half the screen height */
+  height: auto;
+  width: auto;
+  object-fit: contain;
   border-radius: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   box-shadow: 0 0 25px rgba(255,182,193,0.4),
               0 0 30px rgba(173,216,230,0.4);
 }
