@@ -20,7 +20,7 @@ app.post("/topgg", webhook.middleware(), (req, res) => {
 // ✅ Proxy to fetch stats from Top.gg API
 app.get("/api/stats", async (req, res) => {
   try {
-    const response = await fetch(`https://top.gg/api/bots/${process.env.BOT_ID}`, {
+    const response = await fetch(`https://top.gg/api/bots/${process.env.1202626563393323049}`, {
       headers: { Authorization: process.env.TOPGG_API_TOKEN }
     });
     const data = await response.json();
