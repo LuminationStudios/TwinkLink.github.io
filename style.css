@@ -66,10 +66,9 @@ body {
 .project-image-box {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9;    /* keeps images in 16:9 ratio */
+  aspect-ratio: 16 / 9;
   background: rgba(255, 255, 255, 0.25);
   border-radius: 20px;
-  padding: 10px;
   box-shadow: inset 0 0 6px rgba(255,255,255,0.5),
               0 0 20px rgba(173,216,230,0.4);
   margin-bottom: 15px;
@@ -77,16 +76,18 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0; /* remove padding to prevent offset */
 }
 
 .project-image-box img {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;   /* fills the box, crops edges if needed */
-  border-radius: 15px;
+  object-fit: cover; /* fills and crops neatly */
+  border-radius: 20px;
 }
-
-
 
 /* Cute glowing button */
 .project-card .btn {
