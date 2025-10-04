@@ -27,7 +27,7 @@ if (websiteSection && robloxSection) {
   robloxSection.style.display = "none";
 }
 
-// Load Websites Projects
+// === Load Websites Projects ===
 fetch("./websites.json")
   .then(response => response.json())
   .then(data => {
@@ -40,14 +40,15 @@ fetch("./websites.json")
           <div class="project-image-box">
             <img src="${project.image}" alt="${project.title}">
           </div>
-        <a href="project.html?id=${project.id}" class="view-btn">View Project</a>
+          <a href="project.html?id=${project.id}" class="view-btn">View Project</a>
         `;
         container.appendChild(card);
       });
     }
-  });
+  })
+  .catch(err => console.error("Error loading websites:", err));
 
-// Load Roblox Projects
+// === Load Roblox Projects ===
 fetch("./roblox.json")
   .then(response => response.json())
   .then(data => {
@@ -60,13 +61,15 @@ fetch("./roblox.json")
           <div class="project-image-box">
             <img src="${project.image}" alt="${project.title}">
           </div>
-        <a href="project.html?id=${project.id}" class="view-btn">View Project</a>
+          <a href="project.html?id=${project.id}" class="view-btn">View Project</a>
         `;
         container.appendChild(card);
       });
     }
-  });
+  })
+  .catch(err => console.error("Error loading roblox:", err));
 
+// === Load Header ===
 fetch("./header.json")
   .then(response => response.json())
   .then(data => {
@@ -81,25 +84,24 @@ fetch("./header.json")
   })
   .catch(error => console.error("Error loading header:", error));
 
-// Load Footer
+// === Load Footer ===
 fetch("./footer.json")
   .then(response => response.json())
   .then(data => {
     const footer = document.querySelector(".site-footer");
     if (footer) {
-      let html = `<p>${data.text}</p>`;
-      footer.innerHTML = html;
+      footer.innerHTML = `<p>${data.text}</p>`;
     }
-  });
+  })
+  .catch(error => console.error("Error loading footer:", error));
+
 // === Load Theme (Fonts, Colors, etc.) ===
 fetch("./theme.json")
   .then(response => response.json())
   .then(theme => {
     if (theme.font) {
-      // Apply global font
       document.body.style.fontFamily = theme.font;
-      
-      // Optionally load Google Fonts dynamically
+
       const link = document.createElement("link");
       link.href = `https://fonts.googleapis.com/css2?family=${theme.font
         .replace(/['",]+/g, "")
@@ -109,7 +111,6 @@ fetch("./theme.json")
     }
 
     if (theme.headingFont) {
-      // Load and apply heading font
       const headingLink = document.createElement("link");
       headingLink.href = `https://fonts.googleapis.com/css2?family=${theme.headingFont
         .replace(/['",]+/g, "")
@@ -117,7 +118,6 @@ fetch("./theme.json")
       headingLink.rel = "stylesheet";
       document.head.appendChild(headingLink);
 
-      // Apply to headings
       document.querySelectorAll("h1, h2, h3, h4, h5, h6").forEach(el => {
         el.style.fontFamily = theme.headingFont;
       });
