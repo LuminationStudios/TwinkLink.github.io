@@ -6,5 +6,13 @@
     "details": "This is a full-featured landing site for my Discord bot with commands, stats, and docs.",
     "image": "images/luminationsite.png",
     "link": "https://luminationstudios.github.io/"
+  },
+    {
+    "id": "Resource-Madness",
+    "title": "Resource Madness",
+    "description": "A game on Roblox.",
+    "details": "Mine ores to achieve the highest score in the game! Compete with friends to reach the top of the leaderboard.",
+    "image": "rmicon.png",
+    "link": "https://www.roblox.com/games/128779290293041/Caves-Resource-Madness"
   }
 ]
