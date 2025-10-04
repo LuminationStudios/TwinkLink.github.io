@@ -1,8 +1,8 @@
 [
   {
-    "title": "Sample Website",
-    "description": "This is a sample website project.",
-    "image": "https://via.placeholder.com/600x400",
+    "title": "Discord Bot Site",
+    "description": "This is the landing page for my Discord Bot, Lumination.",
+    "image": "images/luminationsite.png",
     "link": "#"
   }
 ]
