@@ -8,6 +8,33 @@ body {
   text-align: center;
 }
 
+/* === Navbar === */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.6);
+  padding: 15px 30px;
+  box-shadow: 0 4px 12px rgba(255,182,193,0.4), 0 4px 20px rgba(173,216,230,0.4);
+  border-radius: 0 0 20px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-left {
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: #444;
+}
+
+.nav-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
 /* === Project Cards with Glassmorphism === */
 .project-card {
   position: relative;
@@ -69,4 +96,67 @@ body {
 .project-card .btn:hover {
   transform: scale(1.05);
   box-shadow: 0 0 20px rgba(255,182,193,0.7), 0 0 25px rgba(173,216,230,0.7);
+}
+
+/* === Footer === */
+.site-footer {
+  text-align: center;
+  margin: 20px auto;
+  background: linear-gradient(90deg, #ffb6c1, #add8e6);
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(255, 182, 193, 0.5), 0 0 30px rgba(173, 216, 230, 0.5);
+  padding: 20px;
+  width: fit-content;
+}
+
+/* === Glow + Sparkles === */
+.glow-box {
+  position: relative;
+  overflow: visible;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0 0 25px rgba(255, 192, 203, 0.3), 0 0 25px rgba(173, 216, 230, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.glow-box:hover {
+  transform: scale(1.02);
+}
+
+.sparkle-container {
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  width: calc(100% + 30px);
+  height: calc(100% + 30px);
+  pointer-events: none;
+  overflow: visible;
+  z-index: 0;
+}
+
+.sparkle {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  opacity: 0.9;
+  filter: blur(0.5px);
+  animation: sparkle-glow 5s infinite ease-in-out;
+}
+
+.sparkle.pink {
+  background: radial-gradient(circle, #ffd6e8 0%, rgba(255,182,193,0) 70%);
+  box-shadow: 0 0 15px 3px rgba(255,182,193,0.6);
+}
+
+.sparkle.blue {
+  background: radial-gradient(circle, #cce7ff 0%, rgba(173,216,230,0) 70%);
+  box-shadow: 0 0 15px 3px rgba(173,216,230,0.6);
+}
+
+@keyframes sparkle-glow {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.3); opacity: 1; }
 }
