@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Details</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-left"><a href="index.html">🌸 My Portfolio</a></div>
+  </nav>
+
+  <!-- Project Detail Container -->
+  <main id="project-detail" class="project-detail-container"></main>
+
+  <!-- Footer -->
+  <footer class="site-footer"></footer>
+
+  <script>
+    // Get project ID from query string
+    const params = new URLSearchParams(window.location.search);
+    const projectId = params.get("id");
+
+    // Try websites.json and roblox.json
+    const sources = ["websites.json", "roblox.json"];
+
+    Promise.all(sources.map(src => fetch(src).then(r => r.json())))
+      .then(allData => {
+        const projects = allData.flat();
+        const project = projects.find(p => p.id === projectId);
+        if (project) {
+          document.getElementById("project-detail").innerHTML = `
+            <h1>${project.title}</h1>
+            <img src="${project.image}" alt="${project.title}">
+            <p>${project.details}</p>
+            <div class="project-buttons">
+              <a href="${project.link}" target="_blank" class="view-btn">Visit Project</a>
+              <a href="index.html" class="back-btn">Back to Portfolio</a>
+            </div>
+          `;
+        } else {
+          document.getElementById("project-detail").innerHTML = "<p>Project not found.</p>";
+        }
+      });
+
+    // Load footer from JSON
+    fetch("footer.json")
+      .then(res => res.json())
+      .then(data => {
+        document.querySelector(".site-footer").textContent = data.text;
+      });
+  </script>
+</body>
+</html>
