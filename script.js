@@ -95,3 +95,36 @@ fetch("./footer.json")
       footer.innerHTML = html;
     }
   });
+// === Load Theme (Fonts, Colors, etc.) ===
+fetch("./theme.json")
+  .then(response => response.json())
+  .then(theme => {
+    if (theme.font) {
+      // Apply global font
+      document.body.style.fontFamily = theme.font;
+      
+      // Optionally load Google Fonts dynamically
+      const link = document.createElement("link");
+      link.href = `https://fonts.googleapis.com/css2?family=${theme.font
+        .replace(/['",]+/g, "")
+        .replace(/\s+/g, "+")}:wght@400;600;700&display=swap`;
+      link.rel = "stylesheet";
+      document.head.appendChild(link);
+    }
+
+    if (theme.headingFont) {
+      // Load and apply heading font
+      const headingLink = document.createElement("link");
+      headingLink.href = `https://fonts.googleapis.com/css2?family=${theme.headingFont
+        .replace(/['",]+/g, "")
+        .replace(/\s+/g, "+")}:wght@400;600;700&display=swap`;
+      headingLink.rel = "stylesheet";
+      document.head.appendChild(headingLink);
+
+      // Apply to headings
+      document.querySelectorAll("h1, h2, h3, h4, h5, h6").forEach(el => {
+        el.style.fontFamily = theme.headingFont;
+      });
+    }
+  })
+  .catch(error => console.error("Error loading theme:", error));
