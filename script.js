@@ -1,3 +1,32 @@
+// === Category Toggle Buttons ===
+const categoryButtons = document.querySelectorAll(".category-btn");
+const websiteSection = document.querySelector("#websites");
+const robloxSection = document.querySelector("#roblox");
+
+categoryButtons.forEach(button => {
+  button.addEventListener("click", () => {
+    // Remove active from all
+    categoryButtons.forEach(btn => btn.classList.remove("active"));
+    // Add active to clicked
+    button.classList.add("active");
+
+    // Show/hide sections
+    if (button.dataset.target === "websites") {
+      websiteSection.style.display = "block";
+      robloxSection.style.display = "none";
+    } else {
+      websiteSection.style.display = "none";
+      robloxSection.style.display = "block";
+    }
+  });
+});
+
+// Default view: websites
+if (websiteSection && robloxSection) {
+  websiteSection.style.display = "block";
+  robloxSection.style.display = "none";
+}
+
 // Load Websites Projects
 fetch("./websites.json")
   .then(response => response.json())
