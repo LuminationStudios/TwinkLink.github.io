@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Details</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="blob blob1"></div>
+  <div class="blob blob2"></div>
+
+  <header>
+    <h1 id="project-title">Loading...</h1>
+    <p id="project-desc"></p>
+  </header>
+
+  <section class="project-details-card" id="details-card">
+    <img id="project-img" src="" alt="Project image">
+    <div class="project-text">
+      <p id="project-full"></p>
+      <div class="btn-group">
+        <a id="project-link" href="#" class="btn">Visit Project</a>
+        <a href="index.html" class="btn">⬅ Back to Portfolio</a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    async function loadProject() {
+      const params = new URLSearchParams(window.location.search);
+      const id = params.get('id');
+      const file = params.get('file') || 'websites.json';
+      const detailsCard = document.getElementById('details-card');
+
+      try {
+        const response = await fetch(file);
+        const projects = await response.json();
+
+        if (!id || isNaN(id) || id < 1 || id > projects.length) {
+          document.getElementById('project-title').textContent = "Project Not Found";
+          document.getElementById('project-desc').textContent = "Oops! This project doesn't exist or the link is broken.";
+          detailsCard.style.display = "none";
+          return;
+        }
+
+        const project = projects[id - 1];
+        document.getElementById('project-title').textContent = project.title;
+        document.getElementById('project-desc').textContent = project.description;
+        document.getElementById('project-img').src = project.image;
+        document.getElementById('project-full').textContent = project.details || "More info coming soon!";
+        document.getElementById('project-link').href = project.link;
+
+      } catch (err) {
+        console.error("Error loading project:", err);
+        document.getElementById('project-title').textContent = "Error";
+        document.getElementById('project-desc').textContent = "Could not load project details. Please try again later.";
+        detailsCard.style.display = "none";
+      }
+    }
+    loadProject();
+  </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="blob blob1"></div>
+  <div class="blob blob2"></div>
+
+  <header>
+    <h1>My Portfolio</h1>
+    <p>Showcasing my Websites and Roblox Projects</p>
+  </header>
+
+  <!-- Category Navigation -->
+  <div class="category-nav">
+    <button class="tab-btn active" data-target="websites">Websites</button>
+    <button class="tab-btn" data-target="roblox">Roblox Projects</button>
+  </div>
+
+  <!-- Portfolio Sections -->
+  <section id="websites" class="category-section active">
+    <div class="portfolio-grid" id="websites-grid"></div>
+  </section>
+
+  <section id="roblox" class="category-section">
+    <div class="portfolio-grid" id="roblox-grid"></div>
+  </section>
+
+  <section class="contact">
+    <h2>Contact Me</h2>
+    <p>Interested in working together or have a question?</p>
+    <a href="mailto:your@email.com">Email Me</a>
+  </section>
+
+  <script>
+    async function loadProjects(file, gridId) {
+      try {
+        const response = await fetch(file);
+        const projects = await response.json();
+        const grid = document.getElementById(gridId);
+
+        projects.forEach((proj, index) => {
+          const item = document.createElement('div');
+          item.className = 'portfolio-item';
+          item.innerHTML = `
+            <img src="${proj.image}" alt="${proj.title}">
+            <div class="portfolio-content">
+              <h3>${proj.title}</h3>
+              <p>${proj.description}</p>
+              <a href="project.html?file=${file}&id=${index+1}" class="btn">View Project</a>
+            </div>
+          `;
+          grid.appendChild(item);
+        });
+      } catch (err) {
+        console.error("Error loading projects from " + file, err);
+      }
+    }
+
+    // Load both categories
+    loadProjects('websites.json', 'websites-grid');
+    loadProjects('roblox.json', 'roblox-grid');
+
+    // Tab Navigation
+    document.addEventListener('DOMContentLoaded', () => {
+      const buttons = document.querySelectorAll('.tab-btn');
+      const sections = document.querySelectorAll('.category-section');
+
+      buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          buttons.forEach(b => b.classList.remove('active'));
+          sections.forEach(sec => sec.classList.remove('active'));
+
+          btn.classList.add('active');
+          document.getElementById(btn.dataset.target).classList.add('active');
+        });
+      });
+    });
+  </script>
+</body>
+</html>
