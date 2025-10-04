@@ -49,3 +49,13 @@
   transform: scale(1.05);
   box-shadow: 0 0 10px rgba(255, 182, 193, 0.6);
 }
+
+.project-detail-container img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 20px; /* ✨ Rounds the corners */
+  margin: 20px 0;
+  object-fit: cover;
+  box-shadow: 0 4px 20px rgba(255, 182, 193, 0.3); /* Optional soft pastel glow */
+}
