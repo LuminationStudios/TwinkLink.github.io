@@ -1,9 +1,9 @@
 [
   {
-    "title": "Roblox Adventure Game",
-    "description": "A custom Roblox experience with unique levels.",
-    "details": "Built using Roblox Studio with Lua scripting.",
-    "image": "images/robloxgame.png",
-    "link": "https://www.roblox.com"
+    "title": "Resource Madness",
+    "description": "A mining game on Roblox!",
+    "details": "Mine your way to fame by mining blocks in the cave or go out exploring the map!",
+    "image": "images/rmicon.png",
+    "link": "https://www.roblox.com/games/128779290293041/Caves-Resource-Madness"
   }
 ]
