@@ -1,1 +1,0 @@
-export default function App(){ return <h1 className='text-center text-4xl text-twinkPink fade-in'>💖 Welcome to TwinkLink 💙</h1> }
