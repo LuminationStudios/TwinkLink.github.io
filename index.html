@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Landing page for your Discord Bot"/>
+  <title>My Discord Bot</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>My Awesome Discord Bot</h1>
+    <p>Invite the bot, check stats, and more.</p>
+    <a href="https://discord.com/api/oauth2/authorize?client_id=YOUR_CLIENT_ID&permissions=8&scope=bot%20applications.commands">Invite Bot</a>
+  </header>
+
+  <section class="stats">
+    <h2>📊 Live Bot Stats</h2>
+    <div class="stats-grid">
+      <div class="stat-box">
+        <div class="stat-number" id="servers">0</div>
+        <div class="stat-label">Servers</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number" id="votes">0</div>
+        <div class="stat-label">Votes</div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+  async function fetchStats() {
+    try {
+      const res = await fetch("https://your-backend-url.com/api/stats");
+      const data = await res.json();
+      document.getElementById("servers").textContent = data.server_count ?? "N/A";
+      document.getElementById("votes").textContent = data.points ?? "0";
+    } catch (err) {
+      console.error("Failed to fetch stats:", err);
+    }
+  }
+  fetchStats();
+  setInterval(fetchStats, 60000);
+  </script>
+</body>
+</html>
