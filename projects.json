@@ -3,7 +3,7 @@
     "title": "Lumination Site",
     "description": "A landing site for my Discord Bot.",
     "details": "This is a website I designed for the Discord Bot I was working on, it features a landing page, docs page, as well as an outline for features and stats!",
-    "image": "https://via.placeholder.com/600x400",
-    "link": "#"
+    "image": "/imgs/luminationsite.png",
+    "link": "https://luminationstudios.github.io/"
   }
 ]
