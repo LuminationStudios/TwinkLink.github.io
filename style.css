@@ -8,6 +8,33 @@ body {
   text-align: center;
 }
 
+/* === Navbar === */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.6);
+  padding: 15px 30px;
+  box-shadow: 0 4px 12px rgba(255,182,193,0.4), 0 4px 20px rgba(173,216,230,0.4);
+  border-radius: 0 0 20px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-left {
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: #444;
+}
+
+.nav-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
 /* === Project Cards with Glassmorphism === */
 .project-card {
   position: relative;
