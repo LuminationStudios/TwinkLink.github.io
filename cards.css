@@ -13,15 +13,18 @@
 .project-card {
   background: rgba(255, 255, 255, 0.25);
   border-radius: 25px;
-  padding: 20px;
+  padding: 15px;
   text-align: center;
   box-shadow: 0 8px 32px rgba(173, 216, 230, 0.4),
               0 0 20px rgba(255, 182, 193, 0.3);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 400px;
 }
 
 .project-card:hover {
   transform: translateY(-4px);
+  box-shadow: 0 8px 40px rgba(255, 182, 193, 0.5);
 }
 
 /* === Image Box === */
@@ -31,12 +34,18 @@
   border-radius: 20px;
   overflow: hidden;
   margin-bottom: 15px;
+  position: relative;
 }
 
 .project-image-box img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-image-box img {
+  transform: scale(1.05);
 }
 
 /* === Card Buttons === */
@@ -49,9 +58,11 @@
   padding: 10px 20px;
   text-decoration: none;
   box-shadow: 0 0 15px rgba(255,182,193,0.4);
-  transition: transform 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: inline-block;
 }
 
 .view-btn:hover {
   transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255,182,193,0.6);
 }
