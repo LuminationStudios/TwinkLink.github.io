@@ -1,0 +1,36 @@
+/* === Project Detail Container === */
+.project-detail-container {
+  display: inline-block;
+  max-width: 90%;
+  max-height: 80vh;
+  margin: 40px auto;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(15px);
+  border-radius: 25px;
+  padding: 20px;
+  text-align: center;
+  overflow: auto;
+}
+
+.project-detail-container img {
+  max-width: 100%;
+  max-height: 40vh;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  object-fit: contain;
+}
+
+.project-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.view-btn, .back-btn {
+  background: linear-gradient(90deg, #ffb6c1, #add8e6);
+  color: white;
+  font-weight: bold;
+  border-radius: 15px;
+  padding: 10px 25px;
+  text-decoration: none;
+}
