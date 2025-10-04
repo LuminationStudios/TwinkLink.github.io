@@ -1,8 +1,10 @@
-{
-  "id": "lumination-site",
-  "title": "Lumination Site",
-  "description": "A landing site for my Discord Bot.",
-  "details": "This is a full-featured landing site for my Discord bot with commands, stats, and docs.",
-  "image": "images/luminationsite.png",
-  "link": "https://luminationstudios.github.io/"
-}
+[
+  {
+    "id": "lumination-site",
+    "title": "Lumination Site",
+    "description": "A landing site for my Discord Bot.",
+    "details": "This is a full-featured landing site for my Discord bot with commands, stats, and docs.",
+    "image": "images/luminationsite.png",
+    "link": "https://luminationstudios.github.io/"
+  }
+]
