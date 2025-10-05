@@ -1,5 +1,13 @@
 [
   {
+    "id": "portfolio",
+    "title": "(This Site) My Portfolio",
+    "description": "A space dedicated to my projects.",
+    "details": "This is a cute Pastel Pink/Blue themed portfolio designed for my various projects and designs.",
+    "image": "",
+    "link": "https://artiedesigns.com"
+  },
+  {
     "id": "lumination-site",
     "title": "Lumination Site",
     "description": "A landing site for my Discord Bot.",
