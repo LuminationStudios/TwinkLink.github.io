@@ -1,38 +1,104 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Portfolio</title>
-  <link rel="stylesheet" href="index.css">
-  <link rel="stylesheet" href="cards.css">
-  <link rel="apple-touch-icon" sizes="180x180" href="favicon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
-
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Artemis Leaf & Lawn — Leaf Removal</title>
+  <meta name="description" content="Artemis Leaf & Lawn — fast, friendly leaf removal and yard cleanup" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23D97706' d='M12 2C8 6 6 9 6 12s2 6 6 8c4-2 6-6 6-8s-2-6-6-10z'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --bg: #FFF8F3;
+      --card: #FFF6EE;
+      --accent-1: #FFB88C;
+      --accent-2: #FFD27F;
+      --accent-3: #C7E8D2;
+      --muted: #7C6B63;
+      --glass: rgba(255, 255, 255, 0.6);
+      --glow: 0 8px 24px rgba(255, 160, 90, 0.25);
+      --radius: 14px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    html, body {height: 100%; background: var(--bg); margin: 0; color: var(--muted);}
+    .container {max-width: 1100px; margin: 0 auto; padding: 28px;}
+    header {display: flex; align-items: center; justify-content: space-between; padding: 12px 0;}
+    .brand {display: flex; gap: 12px; align-items: center;}
+    .logo {width: 56px; height: 56px; border-radius: 12px; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, var(--accent-1), var(--accent-2)); box-shadow: var(--glow);}
+    nav {display: flex; gap: 14px; align-items: center;}
+    a.btn {padding: 8px 14px; border-radius: 10px; text-decoration: none; background: transparent;}
+    a.cta {background: linear-gradient(90deg, var(--accent-1), var(--accent-2)); color: white; box-shadow: var(--glow);}
+    .hero {display: grid; grid-template-columns: 1fr 380px; gap: 28px; padding: 28px 0; align-items: center;}
+    .hero-card {background: linear-gradient(180deg, var(--card), var(--glass)); border-radius: var(--radius); padding: 28px; box-shadow: var(--glow); backdrop-filter: blur(6px);}
+    h1 {font-size: 36px; margin: 0 0 8px;}
+    p.lead {margin: 0 0 18px; color: #5b4c45;}
+    .services {display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; margin-top: 18px;}
+    .service {border-radius: 12px; padding: 18px; background: white; box-shadow: 0 8px 18px rgba(150, 110, 80, 0.08);}
+    .service h3 {margin: 0 0 8px;}
+    .contact {border-radius: 12px; padding: 18px; background: linear-gradient(180deg, #fffdf9, #fff7f1); box-shadow: 0 10px 30px rgba(200, 120, 60, 0.12); display: flex; gap: 12px; align-items: center;}
+    .contact .avatar {width: 64px; height: 64px; border-radius: 12px; background: linear-gradient(180deg, var(--accent-1), var(--accent-2)); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700;}
+    .contact .info {line-height: 1;}
+    .contact .phone {font-weight: 700;}
+    footer {margin-top: 36px; padding: 18px; border-radius: 12px; background: linear-gradient(90deg, rgba(255,255,255,0.7), rgba(250,245,240,0.6)); display: flex; justify-content: space-between; align-items: center;}
+    @media (max-width: 880px) {.hero {grid-template-columns: 1fr;} nav {display: none;}}
+  </style>
 </head>
-<body style="opacity: 0; transition: opacity 0.3s;">
-  <nav class="navbar">
-    <div class="nav-left"><a href="index.html">🌸 Artemis</a></div>
-    <div class="nav-center"></div>
-  </nav>
-
-  <section id="site-header" class="header-box"></section>
-
-  <section id="websites" class="category-section active">
-    <div class="portfolio-grid" id="websites-grid"></div>
-  </section>
-
-  <section id="roblox" class="category-section">
-    <div class="portfolio-grid" id="roblox-grid"></div>
-  </section>
-
-  <footer class="site-footer"></footer>
-
-  <script src="script.js"></script>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo"><svg width="36" height="36" viewBox="0 0 24 24"><path fill="#FFB88C" d="M12 2c-1 2-4 4-6 6s-3 4 0 7 6 3 10 1 2-8-4-14z"/></svg></div>
+        <div><div style="font-weight:700">Artemis Leaf & Lawn</div><div style="font-size:12px;color:#8b7a6f">Friendly seasonal yard cleanup</div></div>
+      </div>
+      <nav><a class="btn" href="#home">Home</a><a class="btn" href="#services">Services</a><a class="btn" href="#contact">Contact</a><a class="btn cta" href="#contact">Get a Quote</a></nav>
+    </header>
+    <main>
+      <section id="home" class="hero">
+        <div class="hero-card">
+          <h1>Artemis Leaf & Lawn — fast, friendly leaf removal</h1>
+          <p class="lead">We clear leaves, tidy gutters, and make your yard ready for the season. Reliable same-week service in your neighborhood.</p>
+          <div class="services" id="services-list"></div>
+        </div>
+        <aside class="hero-card">
+          <h3>Contact</h3>
+          <div class="contact" id="contact-card">
+            <div class="avatar">AL</div>
+            <div class="info">
+              <div id="owner-name">Your Name</div>
+              <div class="phone" id="owner-phone">555-123-4567</div>
+              <div style="font-size:13px;color:#8b7a6f">Serving local neighborhoods — licensed & insured</div>
+            </div>
+          </div>
+        </aside>
+      </section>
+      <section id="services">
+        <h2>Services</h2>
+        <div class="services" id="services-grid"></div>
+      </section>
+    </main>
+    <footer>
+      <div>© <span id="year"></span> Artemis Leaf & Lawn</div>
+      <div>Seasonal yard care & leaf removal</div>
+    </footer>
+  </div>
   <script>
-    window.addEventListener("load", () => {
-      document.body.style.opacity = 1;
+    const SITE = {
+      businessName: "Artemis Leaf & Lawn",
+      owner: "Your Name",
+      phone: "555-123-4567",
+      services: [
+        {title: "Full Lawn Leaf Removal", desc: "Raking, bagging, and hauling—complete yard cleanups."},
+        {title: "Gutter Debris Clearing", desc: "Prevent clogs and water damage with seasonal gutter cleaning."},
+        {title: "Leaf Mulching", desc: "We can mulch leaves for composting or bag them for disposal."},
+        {title: "One-time Cleanups", desc: "Perfect for post-storm or pre-holiday yard prep."}
+      ]
+    };
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const servicesGrid = document.getElementById('services-grid');
+    SITE.services.forEach(s => {
+      const el = document.createElement('div');
+      el.className = 'service';
+      el.innerHTML = `<h3>${s.title}</h3><p>${s.desc}</p>`;
+      servicesGrid.appendChild(el);
     });
   </script>
 </body>
