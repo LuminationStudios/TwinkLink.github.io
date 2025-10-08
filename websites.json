@@ -14,13 +14,5 @@
     "details": "This is a full-featured landing site for my Discord bot with commands, stats, and docs.",
     "image": "images/luminationsite.png",
     "link": "https://luminationstudios.github.io"
-  },
-  {
-    "id": "Leaf-Removal",
-    "title": "Artemis Leaf and Lawn",
-    "description": "",
-    "details": "Affordable leaf removal — same-day or next-day service available! Book your spot before the leaves pile even higher!",
-    "image": "images/all.png",
-    "link": "https://artielawnandleaf.com"
   }
 ]
